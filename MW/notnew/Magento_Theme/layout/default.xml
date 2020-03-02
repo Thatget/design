@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="new.nav" htmlTag="div" htmlId="home" >
+                <container htmlTag="div" htmlClass="main-navigation" >
+                    <container htmlTag="div" htmlClass="container" >
+                        <container name="new.navi" htmlTag="div" htmlClass="row" >
+                            <block class="MW\Indeed\Block\ForeTheme" name="testslider" template="Magento_Theme::index.phtml"/>
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        
+        <move element="logo" destination="new.navi" before="-"/>
+        <move element="top.search" destination="new.navi" after="-"/>
+
+        <referenceContainer name="header.panel.wrapper" remove="true"/>
+        <referenceContainer name="header-wrapper" remove="true"/>
+        <referenceBlock name="minicart" remove="true"/>
+        <referenceBlock  name="navigation.sections" remove="true"/>
+        <referenceBlock name="footer-container" remove="true"/>
+
+    </body>
+</page>

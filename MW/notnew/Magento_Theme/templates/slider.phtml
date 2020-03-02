@@ -1,0 +1,24 @@
+<?php
+
+$data = $block->callProduct('month');
+foreach ($data as $datum) {
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
+    echo  '<img width=\"150px\"  src="'.$store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) .'catalog/product'.$block->getImage($datum->getData()['product_id']).'"/>';
+}
+?>
+
+
+<!--<script>-->
+<!--    require([-->
+<!--        'jquery',-->
+<!--        'slickCarousel'-->
+<!--    ], function($){-->
+<!---->
+<!--        $('.demo').slick({-->
+<!--            infinite: true,-->
+<!--            slidesToShow: 3,-->
+<!--            slidesToScroll: 3-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
