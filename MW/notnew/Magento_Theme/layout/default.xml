@@ -5,28 +5,62 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+
+        <!--Header panel-->
         <referenceContainer name="header.container">
-            <container name="new.nav" htmlTag="div" htmlId="home" >
-                <container htmlTag="div" htmlClass="main-navigation" >
-                    <container htmlTag="div" htmlClass="container" >
-                        <container name="new.navi" htmlTag="div" htmlClass="row" >
-                            <block class="MW\Indeed\Block\ForeTheme" name="testslider" template="Magento_Theme::index.phtml"/>
+            <container name="new.nav" htmlTag="div" htmlId="home">
+                <container htmlTag="div" htmlClass="main-navigation">
+                    <container htmlTag="div" htmlClass="container">
+                        <container name="new.navi" htmlTag="div" htmlClass="row">
+                            <block class="Magento\Framework\View\Element\Template" name="testslider"
+                                   template="Magento_Theme::index.phtml"/>
                         </container>
                     </container>
                 </container>
             </container>
         </referenceContainer>
-        
+
+        <!--Footer content-->
+        <referenceBlock name="footer-container">
+            <container name="footer-banner" htmlTag="div" htmlClass="callto-action">
+                <block name="footer-banner-content" class="MW\Indeed\Block\ForTheme"/>
+            </container>
+            <container name="new.footer-content" htmlTag="section" htmlId="footer-fixed">
+                <container htmlClass="big-footer" htmlTag="div">
+                    <container htmlClass="container" htmlTag="div">
+                        <container htmlClass="row" htmlTag="div">
+                            <block class="Magento\Framework\View\Element\Template" name="site-footer1" before="-"
+                                   template="Magento_Theme::html/site-footer1.phtml"/>
+                            <block class="Magento\Framework\View\Element\Template" name="site-footer2"
+                                   template="Magento_Theme::html/site-footer2.phtml"/>
+                            <container name="new.quick-switch" htmlClass="col-xl-3 col-lg-3 col-md-3 col-sm-6"
+                                       htmlTag="div">
+                                <block class="Magento\Framework\View\Element\Template" name="site-footer3"
+                                       template="Magento_Theme::html/site-footer3.phtml"/>
+                            </container>
+                            <container name="new.subcribe" htmlClass="col-xl-3 col-lg-3 col-md-3 col-sm-6"
+                                       htmlTag="div"/>
+                        </container>
+                    </container>
+                </container>
+                <container name="new.copyright" htmlTag="div" htmlClass="new-footer"/>
+            </container>
+        </referenceBlock>
+
+
         <move element="logo" destination="new.navi" before="-"/>
         <move element="top.search" destination="new.navi" after="-"/>
+        <move element="copyright" destination="new.copyright" after="-"/>
+        <move element="form.subscribe" destination="new.subcribe"/>
 
         <referenceContainer name="header.panel.wrapper" remove="true"/>
         <referenceContainer name="header-wrapper" remove="true"/>
         <referenceBlock name="minicart" remove="true"/>
-        <referenceBlock  name="navigation.sections" remove="true"/>
-        <referenceBlock name="footer-container" remove="true"/>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceBlock name="footer" remove="true"/>
 
     </body>
 </page>

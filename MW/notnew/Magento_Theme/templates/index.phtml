@@ -1,10 +1,16 @@
+<?php
+$baseUrl = $block->_storeManager->getStore()->getBaseUrl();
+?>
+
+
+
                 <!-- mainmenu-area-->
                 <div class="col-xl-10 col-lg-9 col-md-9">
                     <div class="main-menu f-right">
                         <nav id="mobile-menu">
                             <ul>
                                 <li>
-                                    <a class="current" href="index.html">home</a>
+                                    <a class="current" href="index.html"><?php echo $baseUrl;?>></a>
                                 </li>
                                 <li>
                                     <a href="about-us.html">about</a>

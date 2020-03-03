@@ -23,5 +23,6 @@
         <css src="css/aos.min.css" />
         <css src="css/bootstrap.css"/>
         <css src="css/magnific-popup.min.css" />
+
     </head>
 </page>

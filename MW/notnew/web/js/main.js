@@ -1,13 +1,15 @@
 define([
+
         "jquery",
+        "jquery-2",
         "popper",
         "bootstrap",
+        "isotope",
     "magnific-popup",
     "waypoints",
     "counterup",
     "meanmenu",
     "aos",
-    "isotope",
     "backgroundMove",
     "slick",
     "scrollUp"
@@ -16,16 +18,14 @@ define([
         "use strict";
 
         /*----------------------------
-        Animation js active         AOS.init();
+        Animation js active
         ------------------------------ */
+        try {
+            AOS.init()
+        }catch (e) {
 
-        /*----------------------------
-        Counter-up
-        ------------------------------ */
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
+        }
+
         /*----------------------------
          Video Popup JS
         ----------------------------*/
@@ -113,21 +113,9 @@ Project Carousel
         Search
         ------------------------------ */
         var changeClass = function (name) {
-            $('#search, .search-icon-area a').removeAttr('class').addClass(name);
+            $('#searchx, .search-icon-area a').removeAttr('class').addClass(name);
         }
-        /*----------------------------
-        jQuery Mean Menu
-        ------------------------------ */
-        $("#mobile-menu").meanmenu({
-            meanMenuContainer: ".mobile-menu",
-            meanScreenWidth: "767"
-        });
-        $(".info-bar").on("click", function () {
-            $(".extra-info").addClass("info-open");
-        });
-        $(".close-icon").on("click", function () {
-            $(".extra-info").removeClass("info-open");
-        });
+
         /*----------------------------
         Sticky menu active
         ------------------------------ */
@@ -144,30 +132,6 @@ Project Carousel
             });
         }
         fixed_top_menu();
-
-        /*-----------------
-        Scroll-Up
-        -----------------*/
-        $.scrollUp({
-            scrollText: '<i class="far fa-arrow-alt-circle-up"></i>',
-            easingType: 'linear',
-            scrollSpeed: 1000,
-            animation: 'fade'
-        });
-        /*-----------------
-        POrtfolio Filter
-        -----------------*/
-        var $grid = $('.grid').isotope({
-            percentPosition: true,
-        })
-        $('.portfolio-filter').on('click', 'a', function (e) {
-            e.preventDefault();
-            $(this).parent().addClass('active').siblings().removeClass('active');
-            var filterValue = $(this).attr('data-filter');
-            $grid.isotope({
-                filter: filterValue
-            });
-        });
 
         /*----------------------------
                Menu active JS

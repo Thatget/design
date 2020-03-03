@@ -5,6 +5,7 @@ var config = {
     ],
 
     paths: {
+        "jquery-2":"js/vendor/jquery-2.2.4.min",
         "popper":"js/popper.min",
         'bootstrap':'js/bootstrap.bundle',
         "magnific-popup":"js/magnific-popup.min",

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <container name="name.first" htmlTag="header" htmlId="home">
+            <container name="name.inside0" htmlTag="div" htmlClass="main-navigation">
+            <container name="name.inside1" htmlTag="div" htmlClass="container">
+            <container name="name.inside2" htmlTag="div" htmlClass="row">
+                <container name="befo.logo" htmlTag="div" htmlClass="col-xl-2 col-lg-3 col-md-3">
+                <container name="rightbefo.logo" htmlTag="div" htmlClass="logo-area">
+                </container>
+                </container>
+                <container name="name.navigations" htmlTag="div" htmlClass="col-xl-10 col-lg-9 col-md-9">
+                    <block name="name.block.nav" template="Magento_Theme::html/navigations.phtml" before="-"/>
+                    <container name="name.inside.nav" htmlTag="div" htmlClass="mobile-menu" />
+                </container>
+            </container>
+            </container>
+            </container>
+        </container>
+
+        <move element="logo" destination="rightbefo.logo" />
+        <move element="top.search" destination="name.navigations" />
+
+
+
+
+<!--        <referenceContainer name="header.panel">-->
+<!--            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">-->
+<!--                <arguments>-->
+<!--                    <argument name="css_class" xsi:type="string">header links</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
+<!--        <referenceBlock name="report.bugs" remove="true"/>-->
+
+<!--        <referenceContainer name="header.container">-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="site-header" as="site-header" before="-" template="Magento_Theme::html/site-header.phtml">-->
+<!--                <container name="header-search"  after="-">-->
+<!--                    <block name="navigation_section"/>-->
+<!--                </container>-->
+<!--            </block>-->
+
+<!--        </referenceContainer>-->
+<!--        <move element="skip_to_content" destination="site-header"  />-->
+<!--        <move element="header.links" destination="site-header"  />-->
+
+
+<!--        <move element="store_language" destination="site-header"  />-->
+<!--        <move element="store_switcher" destination="site-header"  />-->
+<!--        <move element="currency" destination="site-header"  />-->
+<!--        <move element="top.search" destination="header-search"  />-->
+<!--        <move element="catalog.topnav" destination="site-header"  />-->
+<!--        <referenceContainer name="header.panel" remove="1"/>-->
+<!--        <referenceContainer name="header-wrapper" remove="1"/>-->
+<!--        <referenceContainer name="footer-container">-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="site-footer" as="site-footer" before="-" template="Magento_Theme::html/site-footer.phtml">-->
+<!--                <container name="footer-subscribe"  before="-"/>-->
+
+<!--            </block>-->
+
+<!--        </referenceContainer>-->
+
+
+<!--        &lt;!&ndash; <move element="header.links" destination="site-header" after="-" /> &ndash;&gt;-->
+
+<!--        <move element="footer" destination="site-footer" after="-" />-->
+<!--        <move element="copyright" destination="site-footer" />-->
+<!--        <move element="form.subscribe" destination="footer-subscribe" />-->
+<!--        <referenceBlock name="footer_links" display="false" />-->
+<!--        <referenceBlock name="catalog.compare.sidebar" display="false" />-->
+<!--        <referenceBlock name="wishlist_sidebar" display="false" />-->
+<!--        <referenceBlock name="navigation.sections" display="false" />-->
+<!--        <referenceContainer name="header.panel.wrapper" display="false"/>-->
+    </body>
+</page>

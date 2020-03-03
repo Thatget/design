@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+?>
+
+
+
+<div class="search-box-area">
+    <div id="search" class="fade">
+        <a href="#" class="close-btn" id="close-search">
+            <em class="fa fa-times"></em>
+        </a>
+        <form class="form minisearch" id="search_mini_form" action="<?php /* @escapeNotVerified */
+        echo $helper->getResultUrl() ?>" method="get">
+        <input placeholder="what are you looking for?"
+               value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
+               placeholder="<?php /* @escapeNotVerified */ echo __('Search...'); ?>"
+               name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
+               id="searchbox" type="search" />
+        </form>
+    </div>
+    <div class="search-icon-area">
+        <a href='#searchx'>
+            <i class="fa fa-search"></i>
+        </a>
+    </div>
+</div>
